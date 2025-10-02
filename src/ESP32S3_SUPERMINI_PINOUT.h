@@ -117,7 +117,8 @@
 
 // LED Pins
 #define PIN_LED_WS2812   PIN_GPIO48    // ⚠️ SPICLK_N - Octal SPI variant only
-#define PIN_LED_BLUE     PIN_GPIO2     // ✅ Safe
+#define PIN_LED_BLUE     PIN_GPIO2     // ✅ Safe, but not controllable
+#define PIN_LED_POWER    48            // ⚠️ Safe. Shares channel with PIN_LED_WS2812
 
 // Safe Display Pins (alternative assignments)
 #define PIN_SAFE_DISPLAY_CS   PIN_GPIO15
