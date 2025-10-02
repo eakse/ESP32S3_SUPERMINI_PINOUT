@@ -74,15 +74,16 @@
 #define PIN_GPIO43   43  // ✅
 #define PIN_GPIO44   44  // ✅
 
+
 // ============================================================================
 // 📊 PIN CATEGORIES (Organized by function)
 // ============================================================================
 
 // SPI Pins (when not conflicting with flash)
-#define PIN_SPI_SCK   PIN_GPIO12  // ⚠️ Conflicts with FSPICLK!
-#define PIN_SPI_MISO  PIN_GPIO13  // ⚠️ Conflicts with FSPIQ!
-#define PIN_SPI_MOSI  PIN_GPIO11  // ⚠️ Conflicts with FSPID!
-#define PIN_SPI_SS    PIN_GPIO10  // ⚠️ Conflicts with FSPICS0!
+#define PIN_SPI_SCK   12  // ⚠️ Conflicts with FSPICLK!
+#define PIN_SPI_MISO  13  // ⚠️ Conflicts with FSPIQ!
+#define PIN_SPI_MOSI  11  // ⚠️ Conflicts with FSPID!
+#define PIN_SPI_SS    10  // ⚠️ Conflicts with FSPICS0!
 
 // Safe SPI Pins (use these instead for peripheral SPI)
 #define PIN_SAFE_SPI_SCK   PIN_GPIO17
@@ -109,7 +110,7 @@
 // ============================================================================
 
 // Display Pins
-#define PIN_DISPLAY_CS   PIN_GPIO10    // ⚠️ FSPICS0 - use with caution!
+#define PIN_DISPLAY_CS   10    // ⚠️ FSPICS0 - use with caution!
 #define PIN_DISPLAY_DC   PIN_GPIO9     // ⚠️ FSPIHD - use with caution!
 #define PIN_DISPLAY_RST  PIN_GPIO8     // ✅ Safe
 #define PIN_DISPLAY_BUSY PIN_GPIO12    // ⚠️ FSPICLK - use with caution!
@@ -129,22 +130,22 @@
 // ============================================================================
 
 // Check if pin is safe for general use
-bool PIN_isPinSafe(int pin);
+bool isPinSafe(int pin);
 
 // Get pin type description
-const char* PIN_getPinType(int pin);
+const char* getPinType(int pin);
 
 // Initialize safe pins only
-void PIN_initializeSafePins();
+void initializeSafePins();
 
 // Warning message for restricted pins
-void PIN_printPinWarning(int pin);
+void printPinWarning(int pin);
 
 // Get array of safe pins (for iteration)
-const int* PIN_getSafePinsArray();
-int PIN_getSafePinsCount();
+const int* getSafePinsArray();
+int getSafePinsCount();
 
 // Quick safety check with return code
-int PIN_validatePin(int pin, const char* purpose = nullptr);
+int validatePin(int pin, const char* purpose = nullptr);
 
 #endif
