@@ -1,6 +1,7 @@
 # ESP32-S3 SuperMini Pinout
 
-Pin definitions and safety validation for ESP32-S3 SuperMini boards.
+Pin definitions and safety validation for ESP32-S3 SuperMini boards, specifically the one linked below:  
+https://www.espboards.dev/esp32/esp32-s3-super-mini
 
 ## Quick Use
 
